@@ -17,7 +17,7 @@ public class Myservice01Application {
 
 	@GetMapping("/message")
 	public String message() {
-		return "My Message";
+		return "My Message #1";
 	}
 
 }

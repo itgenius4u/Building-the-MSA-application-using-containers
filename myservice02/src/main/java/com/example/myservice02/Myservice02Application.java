@@ -18,4 +18,8 @@ public class Myservice02Application {
 	public String message() {
 		return "My Message2";
 	}
+	@GetMapping("/message")
+	public String message3() {
+		return "My Message #2";
+	}
 }
