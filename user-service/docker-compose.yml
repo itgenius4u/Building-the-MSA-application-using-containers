@@ -12,7 +12,8 @@ services:
   user-service:
     depends_on:
       - mysql-db
-    image: user-service:0.1
+    # image: user-service:0.1
+    build: .
     container_name: user-service
     restart: always
     ports:
