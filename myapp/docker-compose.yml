@@ -1,0 +1,7 @@
+services:
+  myapp:
+    # image: myapp:0.0.1-SNAPSHOT
+    build: .
+    container_name: myapp
+    ports:
+      - 8080:8080
