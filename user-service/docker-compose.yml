@@ -1,5 +1,5 @@
 services:
-  mysql:
+  mysql-db:
     image: mysql:latest
     container_name: mysql-db
     ports:
@@ -9,3 +9,13 @@ services:
       - MYSQL_DATABASE=user-db
       - MYSQL_USER=user1
       - MYSQL_PASSWORD=1234
+  user-service:
+    depends_on:
+      - mysql-db
+    image: user-service:0.1
+    container_name: user-service
+    restart: always
+    ports:
+      - 8080:8080
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/user-db
