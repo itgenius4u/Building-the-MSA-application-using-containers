@@ -1,4 +1,4 @@
-package com.example.config_server;
+package com.example.producer_service2;
 
 import java.util.HashMap;
 import java.util.Map;
