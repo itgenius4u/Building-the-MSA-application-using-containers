@@ -52,6 +52,16 @@
             "projectName": "consumer-service",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-RabbitmqBinderApplication<rabbitmq-binder>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.rabbitmq_binder.RabbitmqBinderApplication",
+            "projectName": "rabbitmq-binder",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
