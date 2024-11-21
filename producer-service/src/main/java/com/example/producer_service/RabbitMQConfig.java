@@ -1,3 +1,4 @@
+package com.example.producer_service;
 import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
