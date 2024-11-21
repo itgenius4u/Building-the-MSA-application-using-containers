@@ -5,7 +5,10 @@ import lombok.AllArgsConstructor;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 import org.springframework.web.reactive.function.client.WebClient;
 import co.kr.ideacube.employeeservice.dto.APIResponseDto;
 import co.kr.ideacube.employeeservice.dto.DepartmentDto;
@@ -24,8 +27,9 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private EmployeeRepository employeeRepository;
 
-   // private RestTemplate restTemplate;
-    private WebClient webClient;
+    // @Autowired
+    private RestTemplate restTemplate;
+    // private WebClient webClient;
     // private APIClient apiClient;
 
     @Override
@@ -48,31 +52,31 @@ public class EmployeeServiceImpl implements EmployeeService {
         LOGGER.info("inside getEmployeeById() method");
         Employee employee = employeeRepository.findById(employeeId).get();
 
-//        ResponseEntity<DepartmentDto> responseEntity = restTemplate.getForEntity("http://DEPARTMENT-SERVICE/api/departments/" + employee.getDepartmentCode(),
-//                DepartmentDto.class);
-//
-//        DepartmentDto departmentDto = responseEntity.getBody();
+       ResponseEntity<DepartmentDto> responseEntity = restTemplate.getForEntity("http://DEPARTMENT-SERVICE/api/departments/" + employee.getDepartmentCode(),
+               DepartmentDto.class);
 
-        DepartmentDto departmentDto = webClient.get()
-                .uri("http://localhost:8080/api/departments/" + employee.getDepartmentCode())
-                .retrieve()
-                .bodyToMono(DepartmentDto.class)
-                .block();
+       DepartmentDto departmentDto = responseEntity.getBody();
+
+        // DepartmentDto departmentDto = webClient.get()
+        //         .uri("http://localhost:8080/api/departments/" + employee.getDepartmentCode())
+        //         .retrieve()
+        //         .bodyToMono(DepartmentDto.class)
+        //         .block();
 
       //  DepartmentDto departmentDto = apiClient.getDepartment(employee.getDepartmentCode());
 
-        OrganizationDto organizationDto = webClient.get()
-                .uri("http://localhost:8083/api/organizations/" + employee.getOrganizationCode())
-                .retrieve()
-                .bodyToMono(OrganizationDto.class)
-                .block();
+        // OrganizationDto organizationDto = webClient.get()
+        //         .uri("http://localhost:8083/api/organizations/" + employee.getOrganizationCode())
+        //         .retrieve()
+        //         .bodyToMono(OrganizationDto.class)
+        //         .block();
 
         EmployeeDto employeeDto = EmployeeMapper.mapToEmployeeDto(employee);
 
         APIResponseDto apiResponseDto = new APIResponseDto();
         apiResponseDto.setEmployee(employeeDto);
         apiResponseDto.setDepartment(departmentDto);
-        apiResponseDto.setOrganization(organizationDto);
+        // apiResponseDto.setOrganization(organizationDto);
         return apiResponseDto;
     }
 
