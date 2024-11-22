@@ -83,6 +83,27 @@
             "projectName": "consumer-service2",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ProducerServiceBinderApplication<producer-service-binder>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.producer_service_binder.ProducerServiceBinderApplication",
+            "projectName": "producer-service-binder",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env",
+            "vmArgs": " -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=44175 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Dspring.jmx.enabled=true -Djava.rmi.server.hostname=localhost -Dspring.application.admin.enabled=true -Dspring.boot.project.name=producer-service-binder"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ConsumerServiceBinderApplication<consumer-service-binder>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.consumer_service_binder.ConsumerServiceBinderApplication",
+            "projectName": "consumer-service-binder",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }

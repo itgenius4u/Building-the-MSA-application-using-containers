@@ -1,10 +1,10 @@
-package com.example.rabbitmq_binder;
+package com.example.producer_service_binder;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class RabbitmqBinderApplicationTests {
+class ProducerServiceBinderApplicationTests {
 
 	@Test
 	void contextLoads() {
