@@ -1,6 +1,20 @@
 # ConfigServer Git Url 
 https://github.com/itgenius4u/Microservices-Repo.git
 
+### MiniKube 
+
+sudo snap install helm --classic
+kubernetes dashboard
+
+minikube start
+minikube stop
+minikube node add
+
+minikube dashboard
+minikube dashboard -url
+kubectl port-forward deplyment/nginx-deploy 8082:80
+
+
 ### WSL(Windows Subsystem for Linux)
 
 https://learn.microsoft.com/ko-kr/windows/wsl/install
