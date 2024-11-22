@@ -24,18 +24,9 @@ Install Visual Studio Code(https://code.visualstudio.com/download)
     Extension Pack for Java - Extension
     Spring Boot Extension Pack - Extension
 
-### Init & Java
+### Init
 
     $ sudo apt-get install zip nano vim iputils-ping git
-    $ curl -s "https://get.sdkman.io" | bash
-    $ sdk list java
-    $ sdk install java 17.0.3-tem
-    $ sdk default java 17.0.3-tem
-    $ java --version
-    $ sdk use java 17.0.3-tem
-    $ sdk current java
-    $ nano ~/.bashrc
-    export JAVA_HOME=/home/user1/.sdkman/candidates/java/current
     $ sudo apt-get install maven
 
 ### Docker
