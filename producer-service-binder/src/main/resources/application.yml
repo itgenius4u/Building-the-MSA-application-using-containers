@@ -1,9 +1,0 @@
-spring:
-  application:
-    name: producer-service-binder
-  cloud:
-    stream:
-      default-binder: rabbit
-      bindings:
-        output:
-          destination: example-exchange
