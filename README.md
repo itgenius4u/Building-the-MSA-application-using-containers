@@ -17,6 +17,10 @@ kubectl port-forward deplyment/nginx-deploy 8082:80
 docker image save -o catalog-service.tar catalog-service:latest
 minikube image load catalog-service.tar
 
+### ArgoCD
+
+kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+
 ### WSL(Windows Subsystem for Linux)
 
 https://learn.microsoft.com/ko-kr/windows/wsl/install
