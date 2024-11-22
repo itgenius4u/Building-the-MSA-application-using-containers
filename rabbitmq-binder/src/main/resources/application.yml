@@ -6,9 +6,9 @@ spring:
       function:
         definition: myProducerSource;myConsumerSink
       bindings:
-        pkslowSource-out-0:
+        myProducer-out-0:
          destination: my-topic
-        pkslowSink-in-0:
+        myConsumer-in-0:
           destination: my-topic
       poller:
         fixed-delay: 500

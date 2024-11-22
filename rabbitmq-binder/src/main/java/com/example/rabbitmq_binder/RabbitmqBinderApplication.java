@@ -19,7 +19,7 @@ public class RabbitmqBinderApplication {
 	@Bean
 	public Supplier<String> mySupplierSource() {
 		return () -> {
-			String message = "www.pkslow.com";
+			String message = "Hello..";
 			log.info("Sending value: " + message);
 			return message;
 		};
