@@ -1,7 +1,7 @@
 # ConfigServer Git Url 
 https://github.com/itgenius4u/Microservices-Repo.git
 
-### MiniKube 
+### miniKube 
 
 sudo snap install helm --classic
 kubernetes dashboard
@@ -14,6 +14,8 @@ minikube dashboard
 minikube dashboard -url
 kubectl port-forward deplyment/nginx-deploy 8082:80
 
+docker image save -o catalog-service.tar catalog-service:latest
+minikube image load catalog-service.tar
 
 ### WSL(Windows Subsystem for Linux)
 
